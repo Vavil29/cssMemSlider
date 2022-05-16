@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #c5d9d2;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.container input {
+    display: none;
+}
+
+/* IMAGES */
+
+.container1 {
+    width: 100%;
+    
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.images {
+    display: flex;
+    width: 100%;
+    transition: 0.4s ease-in;
+}
+
+.images img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+
+/* TEXT + CONTROLS */
+.container2 {
+    display: grid;
+    grid-template-areas: "txt ctr";
+}
+
+/* CAPTIONS */
+.container3 {
+    width: 100%;
+    grid-area: txt;
+    overflow: hidden;
+}
+
+.captions {
+    display: flex;
+    width: 400%;
+    transition: 0.4s ease-in;
+}
+
+.captions p {
+    width: 100%;
+    transition: 0.4s ease-in;
+    font-size: 1.3rem;
+    color: rgb(78, 60, 60);
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    justify-content: flex-end;
+    
+    width: 100%;
+    gap: 0.5rem;
+    grid-area: ctr;
+}
+
+.control {
+    height: 1.5rem;
+    width: 1.5rem;
+
+    border-radius: 50%;
+    border: 0.25rem solid rgb(78, 60, 60);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control:hover {
+    background-color: rgb(78, 60, 60);
+}
+
+.control div {
+    display: block;
+    width: 170%;
+    height: 170%;
+    cursor: pointer;
+}
+
+/* SLIDER EFFECT IMAGES */
+#btn1:checked ~ .container1 .images {
+    transform: translate(0);
+}
+
+#btn2:checked ~ .container1 .images {
+    transform: translate(-100%);
+}
+
+#btn3:checked ~ .container1 .images {
+    transform: translate(-200%);
+}
+
+#btn4:checked ~ .container1 .images {
+    transform: translate(-300%);
+}
+
+/* SLIDER EFFECT TEXT */
+#btn1:checked ~ .container2 .container3 .captions {
+    transform: translate(0);
+}
+
+#btn2:checked ~ .container2 .container3 .captions {
+    transform: translate(-25%);
+}
+
+#btn3:checked ~ .container2 .container3 .captions {
+    transform: translate(-50%);
+}
+
+#btn4:checked ~ .container2 .container3 .captions {
+    transform: translate(-75%);
+}
+
+/* ACTIVE CONTROL */
+#btn1:checked ~ .container2 #control1 {
+    background-color: rgb(78, 60, 60);
+}
+
+#btn2:checked ~ .container2 #control2 {
+    background-color: rgb(78, 60, 60);
+}
+
+#btn3:checked ~ .container2 #control3 {
+    background-color: rgb(78, 60, 60);
+}
+
+#btn4:checked ~ .container2 #control4 {
+    background-color: rgb(78, 60, 60);
+}
+
+/* ACTIVE CONTROL HOVER */
+
+#btn1:checked ~ .container2 #control1:hover {
+    background-color: wheat;
+    border-color: wheat;
+}
+
+#btn2:checked ~ .container2 #control2:hover {
+    background-color: wheat;
+    border-color: wheat;
+}
+
+#btn3:checked ~ .container2 #control3:hover {
+    background-color: wheat;
+    border-color: wheat;
+}
+
+#btn4:checked ~ .container2 #control4:hover {
+    background-color: wheat;
+    border-color: wheat;
+}
+
+@media only screen and (max-width: 390px) {
+    body {
+      background-color: lightblue;
+    }
+
+    .container2 {
+        grid-template-areas: "ctr" "txt";
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .controls {
+        justify-content: center;
+    }
+  }
+
